@@ -12,3 +12,9 @@ Limpeza do projeto:
 - [X] Remover configurações desnecessárias
 - [X] Alterar configurações básicas
 - [X] Commitar ajustes para o GitHub
+
+Configurações do layout base
+- [X] Título da aplicação
+- [X] Descrição da aplicação
+- [X] Fonte da aplicação
+- [X] Commitar ajustes para o GitHub
