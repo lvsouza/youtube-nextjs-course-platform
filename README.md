@@ -11,10 +11,19 @@ Explicação do projeto:
 Limpeza do projeto:
 - [X] Remover configurações desnecessárias
 - [X] Alterar configurações básicas
-- [X] Commitar ajustes para o GitHub
+- [X] Commit dos ajustes para o GitHub
 
 Configurações do layout base
 - [X] Título da aplicação
 - [X] Descrição da aplicação
 - [X] Fonte da aplicação
-- [X] Commitar ajustes para o GitHub
+- [X] Commit dos ajustes para o GitHub
+
+Tema base com tailwind css
+- [X] Ver protótipo
+- [X] Adicionar variáveis css
+- [X] Alterar configurações do tailwind css
+- [X] Aplicar classes gerais no body e html
+- [X] Commit dos ajustes
+
+

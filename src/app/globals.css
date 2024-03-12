@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+  --color-background: #000000;
+  --color-background-contrast: #ffffff;
+
+  --color-primary: #009688;
+  --color-primary-contrast: #ffffff;
+
+  --color-paper: #232323;
+  --color-text: #ffffff;
+}
+
+
+html, body {
+  @apply bg-background text-text h-screen w-screen
+}
