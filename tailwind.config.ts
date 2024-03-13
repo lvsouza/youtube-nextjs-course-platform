@@ -8,7 +8,6 @@ const config: Config = {
     extend: {
       colors: {
         'background': 'var(--color-background)',
-        'background-contrast': 'var(--color-background-contrast)',
         'primary': 'var(--color-primary)',
         'primary-contrast': 'var(--color-primary-contrast)',
         'paper': 'var(--color-paper)',

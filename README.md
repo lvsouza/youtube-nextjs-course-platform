@@ -26,4 +26,14 @@ Tema base com tailwind css
 - [X] Aplicar classes gerais no body e html
 - [X] Commit dos ajustes
 
+Tipos de arquivos padrão do nextjs
+- [X] Revisar todos os tipos de arquivos padrão
+- [X] Dar um like no vídeo
 
+Criando componente de header básico
+- [ ] Corrigir css aula anterior
+- [ ] Criar o header no layout base
+- [ ] Adicionar links para "Página inicial", "Cursos" e "Blog"
+- [ ] Adicionar CSS no header e global
+- [ ] Adicionar navegação
+- [ ] Commit dos ajustes
