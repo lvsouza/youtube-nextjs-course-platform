@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+import { Card } from '@/components/card/Card';
+
 
 export const metadata: Metadata = {
   title: "CodarSe - Página inicial"
@@ -8,7 +10,7 @@ export const metadata: Metadata = {
 export default function PageHome() {
   return (
     <main>
-      Home
+      <Card />
     </main>
   );
 }
