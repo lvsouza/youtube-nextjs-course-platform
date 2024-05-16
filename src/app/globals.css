@@ -12,6 +12,9 @@
 	--color-primary-contrast: #ffffff;
 }
 
+* {
+	@apply outline-primary outline-1 -outline-offset-2
+}
 
 html,
 body {
