@@ -27,12 +27,17 @@ export default function PageCourseDetail({ params }: Props) {
         <StartCourse
           idClass='1'
           idCourse='1'
+          title='🎩 Curso de Figma para DEVs'
           imageUrl='https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg'
         />
 
-        <CourseHeader
-          
-        />
+        <CourseHeader/>
+        <CourseHeader/>
+        <CourseHeader/>
+        <CourseHeader/>
+        <CourseHeader/>
+        <CourseHeader/>
+        <CourseHeader/>
       </div>
     </main>
   );
