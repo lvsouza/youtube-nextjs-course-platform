@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
+import { CourseContent } from '@/components/course-content/CourseContent';
 import { CourseHeader } from '@/components/course-header/CourseHeader';
 import { StartCourse } from '@/components/StartCourse';
-import { ClassGroup } from '@/components/course-content/components/ClassGroup';
 
 
 interface Props {
@@ -34,15 +34,27 @@ export default function PageCourseDetail({ params }: Props) {
           />
         </div>
 
-        <div className='flex-[2] flex flex-col gap-4'>
+        <div className='flex-[2] flex flex-col gap-12'>
           <CourseHeader />
 
-          <ClassGroup
-            courseId='123'
-            title='Introdução e apresentação do projeto'
-            classes={[
-              { id: '234', title: 'NextJS, TailwindCSS e Typescript: #00 - Apresentação do projeto' },
-              { id: '235', title: 'NextJS, TailwindCSS e Typescript: #01 - Apresentação do protótipo' }
+          <CourseContent
+            classGroups={[
+              {
+                courseId: '123',
+                title: 'Introdução e apresentação do projeto',
+                classes: [
+                  { id: '234', title: 'NextJS, TailwindCSS e Typescript: #00 - Apresentação do projeto' },
+                  { id: '235', title: 'NextJS, TailwindCSS e Typescript: #01 - Apresentação do protótipo' }
+                ]
+              },
+              {
+                courseId: '123',
+                title: 'Primeiras configuração necessárias',
+                classes: [
+                  { id: '234', title: 'NextJS, TailwindCSS e Typescript: #00 - Apresentação do projeto' },
+                  { id: '235', title: 'NextJS, TailwindCSS e Typescript: #01 - Apresentação do protótipo' }
+                ]
+              }
             ]}
           />
         </div>

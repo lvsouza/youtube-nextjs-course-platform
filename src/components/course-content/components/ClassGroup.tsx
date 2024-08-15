@@ -5,7 +5,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from 'react-icons/md';
 import { Class } from './Class';
 
 
-interface IClassGroupProps {
+export interface IClassGroupProps {
   title: string;
   courseId: string;
   classes: {
