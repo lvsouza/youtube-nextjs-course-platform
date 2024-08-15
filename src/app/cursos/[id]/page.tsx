@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 import { CourseHeader } from '@/components/course-header/CourseHeader';
 import { StartCourse } from '@/components/StartCourse';
+import { Class } from '@/components/course-content/components/Class';
 
 
 interface Props {
@@ -35,12 +36,11 @@ export default function PageCourseDetail({ params }: Props) {
 
         <div className='flex-[2]'>
           <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
+          
+          <Class
+            playerUrl='/player/{courseId}/{classId}'
+            title='NextJS, TailwindCSS e Typescript: #00 - Apresentação do projeto'
+          />
         </div>
       </div>
     </main>
