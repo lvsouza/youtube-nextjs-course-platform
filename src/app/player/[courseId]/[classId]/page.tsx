@@ -1,4 +1,4 @@
-import { PlayerHeader, PlayerPlaylist } from '@/components/player';
+import { PlayerHeader, PlayerPlaylist, PlayerVideoPlayer } from '@/components/player';
 
 
 interface Props {
@@ -24,7 +24,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
             playingCourseId={courseId}
             classGroups={[
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '1 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -49,7 +49,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '2 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -74,7 +74,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '3 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -99,7 +99,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '4 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -124,7 +124,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '5 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -149,7 +149,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '6 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -174,7 +174,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '7 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -199,7 +199,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '8 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -224,7 +224,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '9 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -249,7 +249,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '10 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -274,7 +274,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '11 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -299,7 +299,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '12 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -324,7 +324,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '13 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -349,7 +349,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '14 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -374,7 +374,7 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
                 ]
               },
               {
-                title: 'Introdução e apresentação do projeto',
+                title: '15 - Introdução e apresentação do projeto',
                 classes: [
                   {
                     done: true,
@@ -403,7 +403,9 @@ export default function PagePlayer({ params: { classId, courseId } }: Props) {
         </div>
 
         <div className='flex-1'>
-          Player
+          <PlayerVideoPlayer
+            videoId='bP47qRVRqQs'
+          />
         </div>
       </div>
     </main>
