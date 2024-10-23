@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { IPlayerClassGroupProps } from '../playlist/components/PlayerClassGroup';
 import { CourseHeader } from '@/components/course-header/CourseHeader';
 import { PlayerVideoPlayer } from './components/PlayerVideoPlayer';
+import { PlayerClassHeader } from './components/PlayerClassHeader';
 
 
 interface IPlayerClassDetailsProps {
@@ -14,11 +15,15 @@ interface IPlayerClassDetailsProps {
     description: string;
     numberOfClasses: number;
   };
+  classItem: {
+    title: string;
+    description: string;
+  };
   playingClassId: string;
   playingCourseId: string;
   classGroups: Pick<IPlayerClassGroupProps, 'classes' | 'title'>[];
 }
-export const PlayerClassDetails = ({ playingCourseId, playingClassId, classGroups, course }: IPlayerClassDetailsProps) => {
+export const PlayerClassDetails = ({ playingCourseId, playingClassId, classGroups, course, classItem }: IPlayerClassDetailsProps) => {
   const router = useRouter();
 
 
@@ -68,10 +73,13 @@ export const PlayerClassDetails = ({ playingCourseId, playingClassId, classGroup
           </Tabs.Trigger>
         </Tabs.List>
 
-        <hr className='border-paper' />
+        <hr className='border-paper mb-2' />
 
         <Tabs.Content value='class-details'>
-          Detalhes da aula
+          <PlayerClassHeader
+            title={classItem.title}
+            description={classItem.description}
+          />
         </Tabs.Content>
         <Tabs.Content value='class-comments'>
           Comentários da aula
