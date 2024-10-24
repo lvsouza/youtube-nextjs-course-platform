@@ -7,6 +7,7 @@ import { IPlayerVideoPlayerRef, PlayerVideoPlayer } from './components/PlayerVid
 import { IPlayerClassGroupProps } from '../playlist/components/PlayerClassGroup';
 import { CourseHeader } from '@/components/course-header/CourseHeader';
 import { PlayerClassHeader } from './components/PlayerClassHeader';
+import { Comments } from './components/comments/Comments';
 
 
 interface IPlayerClassDetailsProps {
@@ -78,17 +79,19 @@ export const PlayerClassDetails = ({ playingCourseId, playingClassId, classGroup
 
         <hr className='border-paper mb-2' />
 
-        <Tabs.Content value='class-details'>
+        <Tabs.Content value='class-details' className='px-2'>
           <PlayerClassHeader
             title={classItem.title}
             description={classItem.description}
             onTimeClick={seconds => playerVideoPlayerRef.current?.setProgress(seconds)}
           />
         </Tabs.Content>
-        <Tabs.Content value='class-comments'>
-          Comentários da aula
+        <Tabs.Content value='class-comments' className='px-2'>
+          <Comments
+            // comments..
+          />
         </Tabs.Content>
-        <Tabs.Content value='course-details'>
+        <Tabs.Content value='course-details' className='px-2'>
           <CourseHeader
             title={course.title}
             description={course.description}
