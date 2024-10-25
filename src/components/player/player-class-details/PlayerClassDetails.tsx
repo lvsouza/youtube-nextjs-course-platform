@@ -88,7 +88,80 @@ export const PlayerClassDetails = ({ playingCourseId, playingClassId, classGroup
         </Tabs.Content>
         <Tabs.Content value='class-comments' className='px-2'>
           <Comments
-            // comments..
+            comments={[
+              {
+                likesCount: 15,
+                replies: undefined,
+                content: 'My comment',
+                publishDate: '2024-09-09T20:16:37Z',
+                author: {
+                  userName: '@LucasSouzaDev',
+                  image: 'https://yt3.ggpht.com/mrBfIDtsXB_Q-NFs_MDN5e3SnfBwX-ONlw6weUSnFkid-b6mQx5QCfXJO0NVZKay9y1qQGyo=s48-c-k-c0x00ffffff-no-rj',
+                }
+              },
+              {
+                likesCount: 15,
+                content: 'My comment',
+                publishDate: '2024-09-09T20:16:37Z',
+                author: {
+                  userName: '@LucasSouzaDev',
+                  image: 'https://yt3.ggpht.com/mrBfIDtsXB_Q-NFs_MDN5e3SnfBwX-ONlw6weUSnFkid-b6mQx5QCfXJO0NVZKay9y1qQGyo=s48-c-k-c0x00ffffff-no-rj',
+                },
+                replies: [
+                  {
+                    likesCount: 15,
+                    replies: undefined,
+                    content: 'My reply',
+                    publishDate: '2024-09-09T20:16:37Z',
+                    author: {
+                      userName: '@LucasSouzaDev',
+                      image: 'https://yt3.ggpht.com/mrBfIDtsXB_Q-NFs_MDN5e3SnfBwX-ONlw6weUSnFkid-b6mQx5QCfXJO0NVZKay9y1qQGyo=s48-c-k-c0x00ffffff-no-rj',
+                    }
+                  },
+                  {
+                    likesCount: 15,
+                    replies: undefined,
+                    content: 'My reply',
+                    publishDate: '2024-09-09T20:16:37Z',
+                    author: {
+                      userName: '@LucasSouzaDev',
+                      image: 'https://yt3.ggpht.com/mrBfIDtsXB_Q-NFs_MDN5e3SnfBwX-ONlw6weUSnFkid-b6mQx5QCfXJO0NVZKay9y1qQGyo=s48-c-k-c0x00ffffff-no-rj',
+                    }
+                  }
+                ],
+              },
+              {
+                likesCount: 15,
+                content: 'My comment',
+                publishDate: '2024-09-09T20:16:37Z',
+                author: {
+                  userName: '@LucasSouzaDev',
+                  image: 'https://yt3.ggpht.com/mrBfIDtsXB_Q-NFs_MDN5e3SnfBwX-ONlw6weUSnFkid-b6mQx5QCfXJO0NVZKay9y1qQGyo=s48-c-k-c0x00ffffff-no-rj',
+                },
+                replies: [
+                  {
+                    likesCount: 15,
+                    replies: undefined,
+                    content: 'My reply',
+                    publishDate: '2024-09-09T20:16:37Z',
+                    author: {
+                      userName: '@LucasSouzaDev',
+                      image: 'https://yt3.ggpht.com/mrBfIDtsXB_Q-NFs_MDN5e3SnfBwX-ONlw6weUSnFkid-b6mQx5QCfXJO0NVZKay9y1qQGyo=s48-c-k-c0x00ffffff-no-rj',
+                    }
+                  },
+                  {
+                    likesCount: 15,
+                    replies: undefined,
+                    content: 'My reply',
+                    publishDate: '2024-09-09T20:16:37Z',
+                    author: {
+                      userName: '@LucasSouzaDev',
+                      image: 'https://yt3.ggpht.com/mrBfIDtsXB_Q-NFs_MDN5e3SnfBwX-ONlw6weUSnFkid-b6mQx5QCfXJO0NVZKay9y1qQGyo=s48-c-k-c0x00ffffff-no-rj',
+                    }
+                  }
+                ],
+              }
+            ]}
           />
         </Tabs.Content>
         <Tabs.Content value='course-details' className='px-2'>
