@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googleapis/youtube": "^20.0.0",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-tabs": "^1.1.0",
     "date-fns": "^4.1.0",
