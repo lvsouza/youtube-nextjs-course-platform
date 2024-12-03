@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
+import { CourseHeaderLoading } from '@/components/course-header/CourseHeaderLoading';
 import { CourseContent } from '@/components/course-content/CourseContent';
 import { APIYouTube } from '@/shared/services/api-youtube';
 import { StartCourse } from '@/components/StartCourse';
 
 const CourseHeader = dynamic(
-  import('@/components/course-header/CourseHeader').then(res => res.CourseHeader),
-  { ssr: false },
+  () => import('@/components/course-header/CourseHeader').then(res => res.CourseHeader),
+  { ssr: false, loading: CourseHeaderLoading },
 );
 
 

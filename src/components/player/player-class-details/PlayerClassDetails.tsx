@@ -6,14 +6,15 @@ import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
 import { IPlayerVideoPlayerRef, PlayerVideoPlayer } from './components/PlayerVideoPlayer';
+import { CourseHeaderLoading } from '@/components/course-header/CourseHeaderLoading';
 import { IPlayerClassGroupProps } from '../playlist/components/PlayerClassGroup';
 import { PlayerClassHeader } from './components/PlayerClassHeader';
 import { PlayerPlaylist } from '../playlist/PlayerPlaylist';
 import { Comments } from './components/comments/Comments';
 
 const CourseHeader = dynamic(
-  import('@/components/course-header/CourseHeader').then(res => res.CourseHeader),
-  { ssr: false },
+  () => import('@/components/course-header/CourseHeader').then(res => res.CourseHeader),
+  { ssr: false, loading: CourseHeaderLoading },
 );
 
 

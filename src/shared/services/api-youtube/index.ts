@@ -111,6 +111,35 @@ export const APIYouTube = {
       };
     },
   },
+  class: {
+    getById: async (id: string) => {
+      const { data: { items: [classItem] = [] } } = await YouTubeAPIClient.playlistItems.list(
+        { id: [id], part: ['contentDetails'] },
+        { fetchImplementation: fetchWithNextConfig({ revalidate: (60 * 60) * 24 }) }
+      );
+
+      const videoId = classItem.contentDetails?.videoId;
+      if (!videoId) throw new Error("Video id not found");
+
+
+      const { data: { items: [videoItem] = [] } } = await YouTubeAPIClient.videos.list({
+        id: [videoId],
+        maxResults: 1,
+        part: ['snippet', 'statistics'],
+      }, { fetchImplementation: fetchWithNextConfig({ revalidate: (60 * 60) * 48 }) });
+
+      if (!videoItem.snippet) throw new Error("Snippet not found");
+      if (!videoItem.statistics) throw new Error("Statistics not found");
+
+
+      return {
+        videoId,
+        title: String(videoItem.snippet.title),
+        description: String(videoItem.snippet.description),
+        viewsCount: Number(videoItem.statistics.viewCount),
+        likesCount: Number(videoItem.statistics.likeCount),
+        commentsCount: Number(videoItem.statistics.commentCount),
+      };
+    }
+  }
 };
-
-
