@@ -1,5 +1,6 @@
 import { PlayerClassDetails, PlayerHeader, PlayerPlaylist } from '@/components/player';
 import { APIYouTube } from '@/shared/services/api-youtube';
+import { Metadata } from 'next';
 
 
 interface Props {
@@ -8,6 +9,35 @@ interface Props {
     courseId: string;
   }
 }
+
+export async function generateStaticParams(): Promise<Props['params'][]> {
+  const courses = await APIYouTube.course.getAll();
+
+  const classesByCourse = await Promise.all([
+    ...courses.map(course => APIYouTube.class.getAllByCourseId(course.id)),
+  ]);
+
+  return classesByCourse
+    .flatMap(classes => classes)
+    .map(classItem => ({ courseId: classItem.courseId, classId: classItem.id }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const classDetails = await APIYouTube.class.getById(params.classId);
+
+  return {
+    title: classDetails.title,
+    description: classDetails.description,
+    openGraph: {
+      locale: 'pt-Br',
+      type: 'video.episode',
+      title: classDetails.title,
+      description: classDetails.description,
+      videos: [`https://www.youtube.com/watch?v=${classDetails.videoId}`],
+    }
+  };
+};
+
 export default async function PagePlayer({ params: { classId, courseId } }: Props) {
   const courseDetails = await APIYouTube.course.getById(courseId);
   const classDetails = await APIYouTube.class.getById(classId);
