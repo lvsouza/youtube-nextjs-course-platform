@@ -164,5 +164,34 @@ export const APIYouTube = {
         commentsCount: Number(videoItem.statistics.commentCount),
       };
     }
-  }
+  },
+  comments: {
+    getAllByVideoId: async (videoId: string) => {
+      const { data } = await YouTubeAPIClient.commentThreads.list({
+        videoId,
+        maxResults: 50,
+        part: ['snippet', 'replies'],
+      }, { fetchImplementation: fetchWithNextConfig({ revalidate: (60 * 60) * 8 }) });
+
+
+      return (data.items || []).map(threadComment => ({
+        likesCount: threadComment.snippet?.topLevelComment?.snippet?.likeCount || 0,
+        content: threadComment.snippet?.topLevelComment?.snippet?.textOriginal || '',
+        publishDate: threadComment.snippet?.topLevelComment?.snippet?.publishedAt || '',
+        author: {
+          userName: threadComment.snippet?.topLevelComment?.snippet?.authorDisplayName || '',
+          image: threadComment.snippet?.topLevelComment?.snippet?.authorProfileImageUrl || '',
+        },
+        replies: (threadComment.replies?.comments || []).map(reply => ({
+          likesCount: reply.snippet?.likeCount || 0,
+          content: reply.snippet?.textOriginal || '',
+          publishDate: reply.snippet?.publishedAt || '',
+          author: {
+            userName: reply.snippet?.authorDisplayName || '',
+            image: reply.snippet?.authorProfileImageUrl || '',
+          },
+        })),
+      }));
+    },
+  },
 };
