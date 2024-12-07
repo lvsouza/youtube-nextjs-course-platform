@@ -9,6 +9,7 @@ import { IPlayerVideoPlayerRef, PlayerVideoPlayer } from './components/PlayerVid
 import { CourseHeaderLoading } from '@/components/course-header/CourseHeaderLoading';
 import { IPlayerClassGroupProps } from '../playlist/components/PlayerClassGroup';
 import { PlayerClassHeader } from './components/PlayerClassHeader';
+import { LocalStorage } from '@/shared/services/local-storage';
 import { ICommentProps } from './components/comments/Comment';
 import { PlayerPlaylist } from '../playlist/PlayerPlaylist';
 import { Comments } from './components/comments/Comments';
@@ -58,6 +59,15 @@ export const PlayerClassDetails = ({ course, classItem, comments }: IPlayerClass
     matchMedia.addEventListener('change', handleMatchMedia);
     return () => matchMedia.removeEventListener('change', handleMatchMedia);
   }, [currentTab]);
+
+  useEffect(() => {
+    LocalStorage.keepWatching.set({
+      classId: classItem.id,
+      courseId: course.id,
+      className: classItem.title,
+      courseName: course.title,
+    });
+  }, [course.id, course.title, classItem.id, classItem.title]);
 
 
   const nextClassId = useMemo(() => {
