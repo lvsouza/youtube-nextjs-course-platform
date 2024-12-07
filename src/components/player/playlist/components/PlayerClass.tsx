@@ -14,24 +14,28 @@ export const PlayerClass = ({ title, playing, done, onCheck, onPlay }: IPlayerCl
 
   return (
     <button className='flex gap-6 p-4 items-center' onClick={() => onPlay()}>
-      {!done && (
-        <div className='group' onClick={e => { e.stopPropagation(); onCheck(); }}>
-          <MdPlayCircleOutline
-            size={24}
-            className='min-w-6 group-hover:hidden'
-          />
-          <MdCircle
-            size={24}
-            className='min-w-6 hidden group-hover:block'
-          />
-        </div>
-      )}
-      {done && (
-        <MdCheckCircle
-          size={24}
-          className='min-w-6 text-green-400'
-        />
-      )}
+      <div className='group' onClick={e => { e.stopPropagation(); onCheck(); }}>
+        {!done
+          ? (
+            <>
+              <MdPlayCircleOutline
+                size={24}
+                className='min-w-6 group-hover:hidden'
+              />
+              <MdCircle
+                size={24}
+                className='min-w-6 hidden group-hover:block'
+              />
+            </>
+          )
+          : (
+            <MdCheckCircle
+              size={24}
+              className='min-w-6 text-green-400'
+            />
+          )
+        }
+      </div>
 
       <div className='flex flex-col gap-1 items-start'>
         <p
